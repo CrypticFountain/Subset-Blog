@@ -1,0 +1,8 @@
+title: Subset Blog
+description: Simple blog for subset.tv
+url: "https://blog.subset.tv"
+baseurl: ""
+theme: minima
+
+plugins:
+  - jekyll-feed
