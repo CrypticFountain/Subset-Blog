@@ -4,7 +4,7 @@ title: "How to Watch 'The Bear' Without the Anxiety: A 'Calm Before the Storm' S
 date: 2025-01-22 20:30:00 -0700
 categories: [subset-spotlight, comedy-drama]
 tags: [The Bear, anxiety, comfort viewing, Subset Spotlight]
-image: /assets/images/the-bear-calm.jpg
+image: https://artworks.thetvdb.com/banners/v4/series/403294/posters/62cb2fad70271.jpg
 excerpt: "Love The Bear but find it too stressful? This carefully curated subset focuses on the show's quieter, more heartwarming moments without the kitchen chaos."
 ---
 

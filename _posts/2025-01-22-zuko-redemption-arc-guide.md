@@ -4,7 +4,7 @@ title: "The Ultimate Redemption Arc: A Guide to Building the Perfect Zuko Subset
 date: 2025-01-22 21:15:00 -0700
 categories: [show-deep-dive, avatar]
 tags: [Avatar: The Last Airbender, Zuko, redemption arc, character development]
-image: /assets/images/zuko-arc.jpg
+image: https://artworks.thetvdb.com/banners/posters/74852-2.jpg
 excerpt: "Prince Zuko's transformation is one of the greatest stories ever told on television. But how do you capture it perfectly? We break down the essential episodes you need to create a subset that follows his journey from disgraced prince to Fire Lord."
 ---
 

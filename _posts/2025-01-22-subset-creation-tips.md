@@ -4,7 +4,7 @@ title: "5 Tips for Creating Subsets That Tell a Compelling Story"
 date: 2025-01-22 18:30:00 -0700
 categories: [how-to, tutorial]
 tags: [How-To, Tutorial, subset creation, storytelling]
-image: /assets/images/subset-tips.jpg
+image: /assets/images/Subset.png
 excerpt: "Master the art of episode curation with these essential tips for creating subsets that engage viewers and tell meaningful stories."
 ---
 

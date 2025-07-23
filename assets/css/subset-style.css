@@ -129,6 +129,16 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 20px;
 }
 
+.hero-logo {
+    margin-bottom: 2rem;
+}
+
+.subset-logo {
+    height: 80px;
+    width: auto;
+    opacity: 0.95;
+}
+
 .hero-title {
     font-size: 4rem;
     font-weight: 700;

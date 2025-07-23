@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | {{ site.title }}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | truncatewords: 50 }}">
+    <link rel="stylesheet" href="{{ '/assets/css/subset-style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="post-layout">
+    <!-- Header -->
+    <header class="post-header">
+        <div class="container">
+            <div class="header-content">
+                <a href="{{ '/' | relative_url }}" class="logo-link">
+                    <img src="{{ '/assets/images/Subset.png' | relative_url }}" alt="Subset.tv Logo" class="header-logo">
+                    <span class="site-name">Subset.tv Blog</span>
+                </a>
+                <nav class="header-nav">
+                    <a href="{{ '/' | relative_url }}" class="nav-link">Home</a>
+                    <a href="#" class="nav-link">Guides</a>
+                    <a href="#" class="nav-link">Community</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Hero -->
+    <section class="post-hero">
+        {% if page.image %}
+        <div class="post-hero-image">
+            <img src="{{ page.image | relative_url }}" alt="{{ page.title }}">
+            <div class="post-hero-overlay"></div>
+        </div>
+        {% endif %}
+        <div class="container">
+            <div class="post-hero-content">
+                {% if page.categories %}
+                <div class="post-categories">
+                    {% for category in page.categories limit: 2 %}
+                    <span class="category-tag">{{ category | replace: '-', ' ' | capitalize }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+                <h1 class="post-title">{{ page.title }}</h1>
+                <div class="post-meta">
+                    <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %d, %Y" }}</time>
+                    {% if page.tags %}
+                    <div class="post-tags">
+                        {% for tag in page.tags limit: 3 %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Post Content -->
+    <article class="post-content">
+        <div class="container">
+            <div class="content-wrapper">
+                {{ content }}
+            </div>
+        </div>
+    </article>
+
+    <!-- Related Posts -->
+    {% assign related_posts = site.posts | where_exp: "post", "post.url != page.url" | limit: 3 %}
+    {% if related_posts.size > 0 %}
+    <section class="related-posts">
+        <div class="container">
+            <h2 class="section-title">More From the Blog</h2>
+            <div class="posts-grid">
+                {% for post in related_posts %}
+                <article class="post-card">
+                    {% if post.image %}
+                    <div class="post-image">
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    </div>
+                    {% endif %}
+                    <div class="post-card-content">
+                        <h3 class="post-card-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h3>
+                        {% if post.excerpt %}
+                        <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncatewords: 15 }}</p>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="{{ '/assets/images/Subset.png' | relative_url }}" alt="Subset.tv Logo" class="footer-logo">
+                    <p>Beyond the Binge</p>
+                </div>
+                <div class="footer-links">
+                    <a href="{{ '/' | relative_url }}">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; {{ 'now' | date: '%Y' }} Subset.tv. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
