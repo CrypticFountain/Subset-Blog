@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  jekyll:
+    build: .
+    ports:
+      - "4000:4000"
+      - "35729:35729"  # LiveReload port
+    volumes:
+      - .:/app
+      - bundle_cache:/app/vendor/bundle
+    environment:
+      - BUNDLE_PATH=/app/vendor/bundle
+      - JEKYLL_ENV=development
+    user: "0:0"  # Run as root to avoid permission issues
+    command: >
+      sh -c "bundle install &&
+             mkdir -p .jekyll-cache _site &&
+             chmod -R 755 .jekyll-cache _site &&
+             bundle exec jekyll serve --host 0.0.0.0 --livereload --incremental --watch --force_polling"
+    working_dir: /app
+
+volumes:
+  bundle_cache:
