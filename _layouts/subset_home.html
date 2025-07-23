@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title | default: site.title }}</title>
+    <meta name="description" content="{{ page.description | default: site.description }}">
+    <link rel="stylesheet" href="{{ '/assets/css/subset-style.css' | relative_url }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-background"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Beyond the Binge.</h1>
+            <h3 class="hero-subtitle">{{ page.description }}</h3>
+            <div class="hero-actions">
+                <a href="#" class="btn btn-primary">Explore Popular Subsets</a>
+                <a href="#" class="btn btn-secondary">Create Your First Subset</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Post Section -->
+    {% if page.featured_post %}
+    <section class="featured-post">
+        <div class="container">
+            <h2 class="section-title">⭐ Featured Post</h2>
+            <div class="featured-card">
+                <div class="featured-image">
+                    <img src="{{ page.featured_post.image | relative_url }}" alt="{{ page.featured_post.title }}">
+                </div>
+                <div class="featured-content">
+                    <span class="category">{{ page.featured_post.category }}</span>
+                    <h3 class="featured-title">{{ page.featured_post.title }}</h3>
+                    <p class="featured-excerpt">{{ page.featured_post.excerpt }}</p>
+                    <a href="{{ page.featured_post.url | relative_url }}" class="read-more">Read The Guide →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Recent Posts Section -->
+    <section class="recent-posts">
+        <div class="container">
+            <h2 class="section-title">✏️ Fresh From the Blog</h2>
+            <div class="posts-grid">
+                {% for post in site.posts limit: 3 %}
+                <article class="post-card">
+                    {% if post.image %}
+                    <div class="post-image">
+                        <img src="{{ post.image | relative_url }}" alt="{{ post.title }}">
+                    </div>
+                    {% endif %}
+                    <div class="post-content">
+                        <h3 class="post-title">
+                            <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                        </h3>
+                        {% if post.tags %}
+                        <div class="post-tags">
+                            {% for tag in post.tags limit: 2 %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        {% if post.excerpt %}
+                        <p class="post-excerpt">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Curated Content Blocks -->
+    <section class="curated-content">
+        <div class="container">
+            <h2 class="section-title">📺 Find Your Next Watch</h2>
+            <div class="content-blocks">
+                <div class="content-block">
+                    <h3>New to Subsets? Start Here.</h3>
+                    <p>Learn the art of episode curation with our essential guides. Perfect for your first time creating or exploring.</p>
+                    <ul class="block-links">
+                        <li><a href="#">What is a Subset, Exactly?</a></li>
+                        <li><a href="#">How to Build Your First Episode Collection</a></li>
+                        <li><a href="#">Best Practices for Tagging Your Subsets</a></li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">See All Guides</a>
+                </div>
+                
+                <div class="content-block">
+                    <h3>Masterpieces from the Community</h3>
+                    <p>We feature the most creative, insightful, and brilliant subsets created by TV fans just like you.</p>
+                    <ul class="block-links">
+                        <li><a href="#">"The Good Place": A Philosophical Journey</a></li>
+                        <li><a href="#">"The Office": Cringe-Free Comfort Episodes</a></li>
+                        <li><a href="#">A "Black Mirror" Intro Without the Trauma</a></li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Discover More Subsets</a>
+                </div>
+                
+                <div class="content-block">
+                    <h3>Explore the Possibilities</h3>
+                    <p>We analyze the structure of iconic shows to help you find the hidden gems and perfect arcs for your next subset.</p>
+                    <ul class="block-links">
+                        <li><a href="#">Why 'Breaking Bad' is Perfect for Subsets</a></li>
+                        <li><a href="#">Finding Standalone Stories in 'The X-Files'</a></li>
+                        <li><a href="#">Mapping the Timelines of 'Doctor Who'</a></li>
+                    </ul>
+                    <a href="#" class="btn btn-outline">Read Our Show Analyses</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Explore by Show -->
+    <section class="explore-shows">
+        <div class="container">
+            <h2 class="section-title">🔍 Find Your Favorite Show</h2>
+            <p class="section-description">Looking for content about a specific series? Jump right in.</p>
+            <div class="show-tags">
+                <a href="#" class="show-tag">The Office</a>
+                <a href="#" class="show-tag">Breaking Bad</a>
+                <a href="#" class="show-tag">Game of Thrones</a>
+                <a href="#" class="show-tag">Seinfeld</a>
+                <a href="#" class="show-tag">Avatar: The Last Airbender</a>
+                <a href="#" class="show-tag">Doctor Who</a>
+                <a href="#" class="show-tag">Friends</a>
+                <a href="#" class="show-tag">The Sopranos</a>
+                <a href="#" class="show-tag">It's Always Sunny in Philadelphia</a>
+                <a href="#" class="show-tag view-all">View All Shows...</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call-to-Action -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Your Turn to Curate.</h2>
+            <p>You've seen what's possible. You have the ideas. Turn your unique take on your favorite show into a shareable subset for the whole community to enjoy.</p>
+            <a href="#" class="btn btn-large btn-primary">Create a Subset Now</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; {{ 'now' | date: '%Y' }} Subset.tv. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

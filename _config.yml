@@ -1,19 +1,31 @@
-title: Your Blog Title
-email: your-email@example.com
+title: "Subset.tv Blog"
+email: hello@subset.tv
 description: >-
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Welcome to the official blog of Subset.tv. We're here to help you rediscover 
+  your favorite shows, one perfect episode collection at a time. Beyond the binge.
 
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 markdown: kramdown
-theme: minima
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+
+# Subset.tv specific settings
+subset:
+  tagline: "Beyond the Binge"
+  hero_description: "Welcome to the official blog of Subset.tv. We're here to help you rediscover your favorite shows, one perfect episode collection at a time."
+  
+# Collections
+collections:
+  guides:
+    output: true
+    permalink: /:collection/:name/
+  spotlights:
+    output: true
+    permalink: /:collection/:name/
 
 # Exclude from processing
 exclude:

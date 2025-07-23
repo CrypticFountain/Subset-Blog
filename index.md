@@ -1,16 +1,17 @@
 ---
-layout: home
+layout: subset_home
+title: "Beyond the Binge - Subset.tv Blog"
+description: "Welcome to the official blog of Subset.tv. We're here to help you rediscover your favorite shows, one perfect episode collection at a time."
 ---
 
-# Welcome to Your Blog
+# Welcome to Subset.tv Blog
 
-This is your new Jekyll blog! You can start writing posts by creating files in the `_posts` directory.
+Discover the art of episode curation and rediscover your favorite shows through carefully crafted subsets.
 
-## Getting Started
+## What We Do
 
-1. Create new posts in the `_posts` directory
-2. Use the format: `YYYY-MM-DD-post-title.md`
-3. Add front matter at the top of each post
-4. Write your content in Markdown
+- **Show Deep Dives**: Analyze the structure of iconic shows
+- **Subset Spotlights**: Feature the best community creations
+- **How-To Guides**: Learn the art of episode curation
 
-Happy blogging!
+Ready to create your first subset?
