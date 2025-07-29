@@ -310,6 +310,50 @@
     line-height: 1.6;
 }
 
+/* Footer Styling */
+.site-footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer-logo {
+    height: 40px !important;
+    width: auto !important;
+    max-height: 40px !important;
+}
+
+.footer-brand p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+.footer-bottom {
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+}
+
+.footer-bottom p {
+    margin: 0;
+    color: #888;
+    font-size: 0.9rem;
+}
+
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
     .header-content {
