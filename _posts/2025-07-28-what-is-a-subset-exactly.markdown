@@ -5,7 +5,6 @@ date: 2025-07-28
 categories: [getting-started]
 tags: [subset, guide, tutorial, getting started, tv viewing, explainer]
 excerpt: "Ever wanted to re-watch your favorite show, but only the good parts? Learn what a 'subset' is and how it's changing the way we experience television."
-featured_image: "/assets/images/blog/what-is-a-subset.jpg"
 show: "General"
 subset_type: "Explainer"
 ---
