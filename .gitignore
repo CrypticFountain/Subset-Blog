@@ -55,3 +55,6 @@ yarn-error.log*
 
 # Docker
 .dockerignore
+
+#windsurf
+.windsurf
